@@ -3,7 +3,11 @@
 <div class="container">
   <h1 class="display-4 fw-bold text-primary text-center mt-5">Registro</h1>
 
-  {{error}}
+  <!--{{error}}-->
+  {% if error %}
+    <p id="error">{{ error|safe }}</p>
+  {% endif %}
+
 
   <form action="/signup/" method="POST" class="my-3 p-3 bg-light fs-2">
     {% csrf_token %}
