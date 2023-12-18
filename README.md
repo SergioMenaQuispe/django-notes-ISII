@@ -48,3 +48,39 @@ Refactorizando:
 
 
 # CASOS DE PRUEBA
+Para ejecutar los casos de prueba se uso Selenium. Esta herramienta, se utiliza comúnmente para la automatización de pruebas funcionales en aplicaciones web. Permite simular las acciones del usuario en un navegador, como hacer clic en enlaces, llenar formularios, y verificar resultados.
+## CASO DE PRUEBA 1 : TestUsuarioExistente
+Se probó el comportamiento cuando al momento de querer registrarse, los datos corresponden a una cuenta ya existente.
+Por ejemplo: Anteriormente se creo una cuenta con los sgtes datos:
+- username: 123
+- password: 123
+
+Ahora se hará el testeo y veremos los resultados a continuación:
+
+![image](https://github.com/SergioMenaQuispe/django-notes-ISII/assets/87840475/eba26af6-a7d0-4b99-9875-5fb268d59781)
+
+![image](https://github.com/SergioMenaQuispe/django-notes-ISII/assets/87840475/b35dbe58-7389-44c8-a1f9-34748d3488b6)
+
+La salida en consola:
+
+![image](https://github.com/SergioMenaQuispe/django-notes-ISII/assets/87840475/8383f772-d463-4d82-8b9c-305a0ace2431)
+
+## CASO DE PRUEBA 2 : TestPasswordsDiferentes
+Se probó el comportamiento cuando al momento de querer registrarse, la contraseña que se pide no es la misma, a la contraseña que se vuelve a pedir.
+Por ejemplo: Se llena los inputs con los sgtes datos:
+- username: Bruno
+- password1 (primera vez que se digita): 123
+- password2 (segunda vez que se digita): 321
+
+Ahora se hará el testeo y veremos los resultados a continuación:
+
+![image](https://github.com/SergioMenaQuispe/django-notes-ISII/assets/87840475/e5e0c5ed-b288-4ffd-9a61-380a27b44e2d)
+
+![image](https://github.com/SergioMenaQuispe/django-notes-ISII/assets/87840475/4f9f9757-f7b0-48ab-8e19-9b3470ef2df6)
+
+
+La salida en consola, se muestran ambos testeos (el actual y el anteriormente explicado):
+
+![image](https://github.com/SergioMenaQuispe/django-notes-ISII/assets/87840475/9265ab5b-cd17-457c-b027-ba2f6200a41d)
+
+
