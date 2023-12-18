@@ -14,9 +14,9 @@ class RegisterForm(ModelForm):
         model = Task
         fields = ['username', 'password1', 'password2']
         widgets = {
-            'username': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Nombre de usuario'}),
-            'password1': forms.PasswordInput(attrs={'class': 'form-control', 'placeholder': 'Contraseña'}),
-            'password2': forms.PasswordInput(attrs={'class': 'form-control', 'placeholder': 'Confirmar contraseña'}),
+            'username': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Nombre de usuario...'}),
+            'password1': forms.PasswordInput(attrs={'class': 'form-control', 'placeholder': 'Contraseña...'}),
+            'password2': forms.PasswordInput(attrs={'class': 'form-control', 'placeholder': 'Confirmar contraseña...'}),
         }
         labels = {
             'username': 'Nombre de usuario:',
