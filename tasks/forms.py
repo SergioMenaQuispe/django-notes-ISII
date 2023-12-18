@@ -18,6 +18,11 @@ class RegisterForm(ModelForm):
             'password1': forms.PasswordInput(attrs={'class': 'form-control', 'placeholder': 'Contraseña'}),
             'password2': forms.PasswordInput(attrs={'class': 'form-control', 'placeholder': 'Confirmar contraseña'}),
         }
+        labels = {
+            'username': 'Nombre de usuario:',
+            'password1': 'Ingrese contraseña:',
+            'password2': 'Ingrese nuevamente la contraseña:',
+        }
         
-        
+
         

@@ -5,10 +5,13 @@
 
   {{error}}
 
-  <form action="/signup/" method="POST" class="my-3 p-3 bg-light">
+  <form action="/signup/" method="POST" class="my-3 p-3 bg-light fs-2">
     {% csrf_token %}
     {{ form.as_p }}
-    <button class="btn btn-primary">Registrarme</button>
+    
+    <div class="container d-flex justify-content-center align-items-center">
+      <button class="btn btn-primary fs-2">Registrarme</button>
+    </div>
   </form>
 </div>
 {% endblock %}
