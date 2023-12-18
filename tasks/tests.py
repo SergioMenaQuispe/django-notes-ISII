@@ -26,7 +26,7 @@ class TestUsuarioExistente(TestCase, LiveServerTestCase):
         return super().tearDown()
 
     def test_form(self):
-        #   Intentamos registrarnos
+        # Intentamos registrarnos
         WebDriverWait(self.driver, 5).until(EC.element_to_be_clickable(
             (By.ID, 'id_username'))).send_keys('123')
         WebDriverWait(self.driver, 5).until(EC.element_to_be_clickable(
@@ -40,8 +40,8 @@ class TestUsuarioExistente(TestCase, LiveServerTestCase):
         error = self.driver.find_element(by=By.ID, value='error')
         # Guardamos el texto de eso mensaje
         resultado = error.text
-        # Comprobamos si el contenido del input es el esperado
-        self.assertEqual(resultado, 'Username already exists.')
+        # Comprobamos si el contenido del mensaje es el esperado
+        self.assertEqual(resultado, 'El usuario ya esta registrado.')
 
 
 if __name__ == '__main__':

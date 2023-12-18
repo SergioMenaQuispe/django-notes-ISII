@@ -14,8 +14,9 @@ from .forms import RegisterForm
 
 
 def signup(request):
+    ruta='signup.html'
     if request.method == 'GET':
-        return render(request, 'signup.html', {"form": RegisterForm})
+        return render(request, ruta, {"form": RegisterForm})
     else:
 
         if request.POST["password1"] == request.POST["password2"]:
@@ -26,9 +27,9 @@ def signup(request):
                 login(request, user)
                 return redirect('tasks')
             except IntegrityError:
-                return render(request, 'signup.html', {"form": RegisterForm, "error": "Username already exists."})
+                return render(request, ruta, {"form": RegisterForm, "error": "El usuario ya esta registrado."})
 
-        return render(request, 'signup.html', {"form": RegisterForm, "error": "Passwords did not match."})
+        return render(request, ruta, {"form": RegisterForm, "error": "Las contraseñas no coinciden."})
 
 
 @login_required
