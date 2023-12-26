@@ -1,18 +1,12 @@
 from django.forms import ModelForm
 from .models import Task
-<<<<<<< HEAD
 from django import forms
 
-=======
-from .models import Comment
->>>>>>> rama-Christian
-
+from comments.models import Comment
 
 class TaskForm(ModelForm):
     class Meta:
         model = Task
-<<<<<<< HEAD
-<<<<<<< HEAD
         fields = ['title', 'description', 'important']
 
 class RegisterForm(ModelForm):
@@ -30,18 +24,9 @@ class RegisterForm(ModelForm):
             'password2': 'Ingrese nuevamente la contraseña:',
         }
         
-
-        
-=======
-        
-        fields = ['title', 'description', 'important', 'is_public']
->>>>>>> rama-Saul
-=======
         fields = ['title', 'description', 'important', 'public']
-
 
 class CommentForm(ModelForm):
     class Meta:
         model = Comment
         fields = ['text']
->>>>>>> rama-Christian
