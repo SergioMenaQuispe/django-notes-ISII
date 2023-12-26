@@ -1,5 +1,6 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 # Pasos para iniciar proyecto
 =======
 # Gestor de Tareas
@@ -277,3 +278,9 @@ La salida en consola, se muestran ambos testeos (el actual y el anteriormente ex
 >>>>>>> rama-Bruno
 =======
 >>>>>>> rama-Saul
+=======
+Rama de Christian Pardavé Espinoza:
+
+- Test vista tasks.
+- Implementación de comentarios en tareas públicas.
+>>>>>>> rama-Christian

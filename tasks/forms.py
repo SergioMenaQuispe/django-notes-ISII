@@ -1,12 +1,17 @@
 from django.forms import ModelForm
 from .models import Task
+<<<<<<< HEAD
 from django import forms
 
+=======
+from .models import Comment
+>>>>>>> rama-Christian
 
 
 class TaskForm(ModelForm):
     class Meta:
         model = Task
+<<<<<<< HEAD
 <<<<<<< HEAD
         fields = ['title', 'description', 'important']
 
@@ -31,3 +36,12 @@ class RegisterForm(ModelForm):
         
         fields = ['title', 'description', 'important', 'is_public']
 >>>>>>> rama-Saul
+=======
+        fields = ['title', 'description', 'important', 'public']
+
+
+class CommentForm(ModelForm):
+    class Meta:
+        model = Comment
+        fields = ['text']
+>>>>>>> rama-Christian
