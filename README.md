@@ -83,4 +83,36 @@ La salida en consola, se muestran ambos testeos (el actual y el anteriormente ex
 
 ![image](https://github.com/SergioMenaQuispe/django-notes-ISII/assets/87840475/9265ab5b-cd17-457c-b027-ba2f6200a41d)
 
+# MÓDULOS Y CONTEXTOS DELIMITADOS IDENTIFICADOS
+
+## Módulos:
+### Módulo de Autenticación:
+Funciones: Signup, Registro de usuarios, Login, Logout.
+
+Responsabilidad: Gestionar la autenticación y autorización de usuarios.
+### Módulo de Gestión de Tareas:
+Funciones: Task Model, Formulario de Tareas, Crear tareas, Listar tareas, Obtener Tarea,
+Actualizar tarea, Completar y eliminar tarea, Listar tareas completadas.
+
+Responsabilidad: Administrar el ciclo de vida de las tareas, desde su creación hasta su
+finalización y eliminación.
+
+### Módulo de Presentación y Templates:
+Funciones: Templates y condicionales.
+
+Responsabilidad: Manejar la presentación de la interfaz de usuario, renderizar vistas y
+aplicar lógica condicional para mostrar información de manera dinámica.
+
+## Contextos Delimitados:
+### Contexto de Autenticación:
+Agrupa todas las funcionalidades relacionadas con el registro, inicio de sesión y gestión de
+sesiones de usuario.
+### Contexto de Gestión de Tareas:
+Engloba todas las funcionalidades relacionadas con la creación, edición, visualización y
+gestión de tareas.
+### Contexto de Presentación y UI:
+Se centra en la presentación visual de la aplicación, la manipulación de templates y la lógica
+condicional para la renderización de vistas.
+
+![image](https://github.com/SergioMenaQuispe/django-notes-ISII/assets/87840475/99931412-bb05-4103-b619-891b506a55e1)
 
