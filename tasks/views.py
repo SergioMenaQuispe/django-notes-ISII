@@ -8,9 +8,33 @@ from django.contrib.auth.decorators import login_required
 from .models import Task
 
 from .forms import TaskForm
+from .forms import RegisterForm
 
 # Create your views here.
 
+<<<<<<< HEAD
+=======
+
+def signup(request):
+    ruta='signup.html'
+    if request.method == 'GET':
+        return render(request, ruta, {"form": RegisterForm})
+    else:
+
+        if request.POST["password1"] == request.POST["password2"]:
+            try:
+                user = User.objects.create_user(
+                    request.POST["username"], password=request.POST["password1"])
+                user.save()
+                login(request, user)
+                return redirect('tasks')
+            except IntegrityError:
+                return render(request, ruta, {"form": RegisterForm, "error": "El usuario ya esta registrado."})
+
+        return render(request, ruta, {"form": RegisterForm, "error": "Las contraseñas no coinciden."})
+
+
+>>>>>>> rama-Bruno
 @login_required
 def tasks(request):
     tasks = Task.objects.filter(user=request.user, datecompleted__isnull=True)
