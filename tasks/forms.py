@@ -7,6 +7,7 @@ from django import forms
 class TaskForm(ModelForm):
     class Meta:
         model = Task
+<<<<<<< HEAD
         fields = ['title', 'description', 'important']
 
 class RegisterForm(ModelForm):
@@ -26,3 +27,7 @@ class RegisterForm(ModelForm):
         
 
         
+=======
+        
+        fields = ['title', 'description', 'important', 'is_public']
+>>>>>>> rama-Saul

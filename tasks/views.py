@@ -10,7 +10,8 @@ from .models import Task
 from .forms import TaskForm
 from .forms import RegisterForm
 
-# Create your views here.
+# Constante para signup
+SIGNUP_TEMPLATE = 'signup.html'
 
 <<<<<<< HEAD
 =======
@@ -18,7 +19,11 @@ from .forms import RegisterForm
 def signup(request):
     ruta='signup.html'
     if request.method == 'GET':
+<<<<<<< HEAD
         return render(request, ruta, {"form": RegisterForm})
+=======
+        return render(request, SIGNUP_TEMPLATE, {"form": UserCreationForm})
+>>>>>>> rama-Saul
     else:
 
         if request.POST["password1"] == request.POST["password2"]:
@@ -29,9 +34,15 @@ def signup(request):
                 login(request, user)
                 return redirect('tasks')
             except IntegrityError:
+<<<<<<< HEAD
                 return render(request, ruta, {"form": RegisterForm, "error": "El usuario ya esta registrado."})
 
         return render(request, ruta, {"form": RegisterForm, "error": "Las contraseñas no coinciden."})
+=======
+                return render(request, SIGNUP_TEMPLATE, {"form": UserCreationForm, "error": "Username already exists."})
+
+        return render(request, SIGNUP_TEMPLATE, {"form": UserCreationForm, "error": "Passwords did not match."})
+>>>>>>> rama-Saul
 
 
 >>>>>>> rama-Bruno
@@ -70,6 +81,11 @@ def create_task(request):
             return redirect('tasks')
         except ValueError:
             return render(request, 'create_task.html', {"form": TaskForm, "error": "Error creating task."})
+    
+@login_required
+def public_tasks(request):
+    tasks = Task.objects.filter(is_public=True)
+    return render(request, 'public_tasks.html', {'tasks': tasks})
 
 
 def home(request):
