@@ -116,3 +116,32 @@ condicional para la renderización de vistas.
 
 ![image](https://github.com/SergioMenaQuispe/django-notes-ISII/assets/87840475/99931412-bb05-4103-b619-891b506a55e1)
 
+# MICROSERVICIOS IDENTIFICADOS
+
+## Microservicio de Autenticación y Usuarios:
+AuthService: Gestiona el registro, autenticación, autorización y manejo de sesiones de usuario.
+UserProfileService: Administra los perfiles y datos de usuario, incluyendo la configuración y
+preferencias asociadas.
+## Microservicio de Gestión de Tareas:
+TaskService: Maneja todas las operaciones relacionadas con las tareas, como la creación, edición,
+visualización, actualización, completado y eliminación de tareas.
+## Microservicio de Presentación y UI:
+PresentationService: Se encarga de la presentación visual de la aplicación, gestionando la
+renderización de vistas, la manipulación de templates y la lógica condicional para mostrar
+información de manera dinámica.
+## Microservicio de Comunicación y Integración:
+CommunicationService: Facilita la comunicación y la integración entre los diferentes microservicios
+y componentes de la aplicación, asegurando una interacción fluida y coherente entre los diferentes
+servicios.
+## Microservicio de Configuración y Gestión de Datos:
+ConfigurationService: Administra la configuración global de la aplicación, permitiendo la
+personalización y adaptación de funcionalidades según las preferencias y necesidades del usuario
+o del sistema.
+
+![image](https://github.com/SergioMenaQuispe/django-notes-ISII/assets/87840475/b5000e9e-b583-415e-ad4c-5d9bb5569999)
+
+
+Estos microservicios representan unidades funcionales independientes que pueden ser
+desarrolladas, desplegadas y escaladas de manera individual, permitiendo una mayor flexibilidad,
+adaptabilidad y mantenibilidad en el desarrollo y operación de tu aplicación.
+
