@@ -16,28 +16,22 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from tasks import views
-from auth import views as task_views
 
 
 urlpatterns = [
     path('', views.home, name='home'),
     path('admin/', admin.site.urls),
-    path('signup/', task_views.signup, name='signup'),
+    path('signup/', views.signup, name='signup'),
     path('tasks/', views.tasks, name='tasks'),
     path('tasks_completed/', views.tasks_completed, name='tasks_completed'),
-    path('logout/', task_views.signout, name='logout'),
-    path('signin/', task_views.signin, name='signin'),
+    path('logout/', views.signout, name='logout'),
+    path('signin/', views.signin, name='signin'),
     path('create_task/', views.create_task, name='create_task'),
     path('tasks/<int:task_id>', views.task_detail, name='task_detail'),
     path('tasks/<int:task_id>/complete',
          views.complete_task, name='complete_task'),
     path('tasks/<int:task_id>/delete', views.delete_task, name='delete_task'),
-<<<<<<< HEAD
-    
-    path('public_tasks/', views.public_tasks, name='public_tasks'),
-=======
     path('task_public/', views.task_public, name='task_public'),
     path('tasks/<int:task_id>/comment',
          views.add_comment, name='add_comment'),
->>>>>>> rama-Christian
 ]

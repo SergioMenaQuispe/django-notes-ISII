@@ -16,13 +16,12 @@ def signup(request):
                 user = User.objects.create_user(
                     request.POST["username"], password=request.POST["password1"])
                 user.save()
-                login(request, user)  # Replace LoginFailure with login
+                login(request, user)
                 return redirect('tasks')
             except IntegrityError:
                 return render(request, 'signup.html', {"form": UserCreationForm, "error": "Username already exists."})
 
-        return render(request, 'signup.html', {"form": UserCreationForm, "error": "Passwords did not match."})
-
+        return render(request, 'signup.html', {"form": UserCreationForm, "error": "Passwords did not match."})
 
 def signin(request):
     if request.method == 'GET':

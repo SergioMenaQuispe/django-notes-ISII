@@ -11,12 +11,9 @@ from .forms import TaskForm
 from comments.forms import CommentForm
 
 # Constante para signup
-SIGNUP_TEMPLATE = 'signup.html'
-
 def signup(request):
-    ruta='signup.html'
     if request.method == 'GET':
-        return render(request, SIGNUP_TEMPLATE, {"form": UserCreationForm})
+        return render(request, 'signup.html', {"form": UserCreationForm})
     else:
 
         if request.POST["password1"] == request.POST["password2"]:
@@ -27,10 +24,9 @@ def signup(request):
                 login(request, user)
                 return redirect('tasks')
             except IntegrityError:
-                return render(request, SIGNUP_TEMPLATE, {"form": UserCreationForm, "error": "Username already exists."})
+                return render(request, 'signup.html', {"form": UserCreationForm, "error": "Username already exists."})
 
-        return render(request, SIGNUP_TEMPLATE, {"form": UserCreationForm, "error": "Passwords did not match."})
-
+        return render(request, 'signup.html', {"form": UserCreationForm, "error": "Passwords did not match."})
 # prueba
 @login_required
 def tasks(request):
@@ -40,9 +36,7 @@ def tasks(request):
     count_completed = tasks_completed.count()
     count_not_completed = tasks.count()
 
-    return render(request, 'tasks.html', {"tasks": tasks, "count_total": count_completed + count_not_completed, "count_completed": count_completed})
-
-
+    return render(request, 'tasks.html', {"tasks": tasks, "count_total": count_completed + count_not_completed, "count_completed": count_completed, "is_public": False})
 
 @login_required
 def tasks_completed(request):
@@ -52,7 +46,7 @@ def tasks_completed(request):
     count_not_completed = tasks_not_completed.count()
     count_completed = tasks.count()
     
-    return render(request, 'tasks.html', {"tasks": tasks, "count_total": count_completed + count_not_completed, "count_completed": count_completed})
+    return render(request, 'tasks.html', {"tasks": tasks, "count_total": count_completed + count_not_completed, "count_completed": count_completed, "is_public": False})
 
 
 @login_required
